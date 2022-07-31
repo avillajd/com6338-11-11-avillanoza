@@ -9,7 +9,19 @@ const pipe = (...fns) => firstArg => fns.reduce((returnValue, fn) => fn(returnVa
 const makeTag = tag => str => `<${tag}>${str}</${tag}>`
 
 // complete this function
-const makePoemHTML = () => {}
+const makePoemHTML = (poemFields) => {
+  console.log(poemFields) // Targets for building this function
+
+  // creating img for background
+  const scrollImage = document.createElement('img') 
+  scrollImage.src = "scroll.png"
+  poemEl.appendChild(scrollImage) // not sure how to do this...
+
+  //adding title 
+  const title = makeTag('h2')(poem[0].title)
+  poemEl.appendChild(title)
+ 
+}
 
 // attach a click event to #get-poem
 getPoemBtn.onclick = async function() {
